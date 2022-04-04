@@ -17,5 +17,8 @@ while($r1=mysqli_fetch_array($res1))
     $total_employee=$r1['total_employee'];
 }
 $emp_absent=$total_employee-$emp_present;
-echo $emp_present,$emp_absent;
+$output=array('present'=>$emp_present,'absent'=>$emp_absent);
+echo json_encode($output);
+
+
 ?>
